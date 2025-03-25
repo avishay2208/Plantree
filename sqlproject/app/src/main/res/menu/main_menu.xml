@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/round_home_24"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_new_tree_plant"
+            android:icon="@drawable/round_plus_24"
+            android:title="Plant a new tree" />
+        <item
+            android:id="@+id/nav_planted_trees"
+            android:icon="@drawable/round_checklist_24"
+            android:title="Planted trees" />
+        <item
+            android:id="@+id/nav_account_center"
+            android:icon="@drawable/outline_manage_accounts_24"
+            android:title="Account center" />
+    </group>
+
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="" />
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="" />
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="" />
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="" />
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="" />
+    <item
+            android:title="">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_log_out"
+                        android:icon="@drawable/outline_logout_24"
+                        android:title="Log out" />
+                </group>
+            </menu>
+
+        </item>
+</menu>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayoutAdminControls"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B2C8D6"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.AdminControlsActivity"
+    tools:openDrawer="start">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:background="#B2C8D6"
+        app:headerLayout="@layout/header"
+        app:itemIconTint="#FF1B1F22"
+        app:itemShapeFillColor="#00F3EED2"
+        app:itemTextColor="#FF1B1F22"
+        app:itemTextAppearance="@style/baloo_Size_and_FontStyle"
+        app:menu="@menu/main_menu"
+        app:subheaderColor="#00FFC003" >
+    </com.google.android.material.navigation.NavigationView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarAdminControls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#B2C8D6"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/hamburger_menu2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="385dp"
+            android:layout_height="89dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/bad_script"
+            android:text="Admin Controls"
+            android:textSize="48sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnManageTrees"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="120dp"
+            android:backgroundTint="#E7823F"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:text="Manage Trees"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <Button
+            android:id="@+id/btnManageUsers"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:backgroundTint="#E7823F"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:text="Manage Users"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnManageTrees" />
+
+        <Button
+            android:id="@+id/btnManageLocations"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#E7823F"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:text="Manage Locations"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnManageUsers" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

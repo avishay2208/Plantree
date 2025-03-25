@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#CBB1C7D5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/tvUSERplantID"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/baloo_bhai_2_semibold"
+                android:text="plant no. #"
+                android:textSize="28sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="185dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.018"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvUSERplantID" />
+
+            <TextView
+                android:id="@+id/tvUSERplantTreeType"
+                android:layout_width="192dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/baloo_bhai_2_semibold"
+                android:text="tree type"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toStartOf="@+id/ivUSERplantTree"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvUSERplantID" />
+
+            <TextView
+                android:id="@+id/tvUSERplantTreeID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="-8dp"
+                android:fontFamily="@font/baloo_bhai_2_semibold"
+                android:text="tree id"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/ivUSERplantTree"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvUSERplantTreeType" />
+
+            <TextView
+                android:id="@+id/tvUSERplantAddress"
+                android:layout_width="192dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/baloo_bhai_2_semibold"
+                android:gravity="center|left"
+                android:text="address"
+                android:textSize="22sp"
+                app:autoSizeMaxTextSize="22sp"
+                app:autoSizeMinTextSize="16sp"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintEnd_toStartOf="@+id/ivUSERplantTree"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvUSERplantTreeID" />
+
+            <TextView
+                android:id="@+id/tvUSERplantDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/baloo_bhai_2_semibold"
+                android:text="plant date"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toStartOf="@+id/ivUSERplantTree"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvUSERplantAddress" />
+
+            <TextView
+                android:id="@+id/tvUSERplantPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/baloo_bhai_2_semibold"
+                android:text="price"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toStartOf="@+id/ivUSERplantTree"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvUSERplantDate" />
+
+            <ImageView
+                android:id="@+id/ivUSERplantTree"
+                android:layout_width="191dp"
+                android:layout_height="191dp"
+                android:layout_marginTop="60dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.976"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

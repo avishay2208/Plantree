@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="baloo_Size_and_FontStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/baloo_bhai_2_semibold</item>
+        <item name="android:textSize">17dp</item>
+    </style>
+<!--    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar.Bridge
+Theme.MaterialComponents.Light.DarkActionBar">-->
+
+</resources>

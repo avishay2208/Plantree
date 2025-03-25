@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">sql project</string>
+    <string name="navigation_drawer_open" />
+    <string name="navigation_drawer_close" />
+    <string name="plant">Plant!</string>
+    <string name="select_an_address">Select an address</string>
+    <string name="price">price</string>
+    <string name="type">type</string>
+    <string name="select_a_tree" />
+</resources>

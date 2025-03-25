@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B1C7D5">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="324dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/bad_script"
+        android:text="Account Center"
+        android:textAlignment="center"
+        android:textSize="52sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="300dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <EditText
+            android:id="@+id/eTfirstNameUpdate"
+            android:layout_width="150dp"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:hint="first name"
+            android:inputType="text"
+            android:textColorHint="#939090" />
+
+        <EditText
+            android:id="@+id/eTlastNameUpdate"
+            android:layout_width="150dp"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:hint="last name"
+            android:inputType="text"
+            android:textColorHint="#939090" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/eTeMailUpdate"
+        android:layout_width="300dp"
+        android:layout_height="62dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:hint="eMail"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#939090"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <EditText
+        android:id="@+id/eTphoneNumberUpdate"
+        android:layout_width="300dp"
+        android:layout_height="62dp"
+        android:ems="10"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:hint="phone number"
+        android:inputType="phone"
+        android:textColorHint="#939090"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTeMailUpdate" />
+
+    <EditText
+        android:id="@+id/eTpasswordUpdate"
+        android:layout_width="300dp"
+        android:layout_height="62dp"
+        android:ems="10"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:textColorHint="#939090"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTphoneNumberUpdate" />
+
+    <EditText
+        android:id="@+id/eTconfirmPasswordUpdate"
+        android:layout_width="300dp"
+        android:layout_height="62dp"
+        android:ems="10"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:hint="confirm password"
+        android:inputType="textPassword"
+        android:textColorHint="#939090"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTpasswordUpdate" />
+
+    <Button
+        android:id="@+id/btnSaveChanges"
+        android:layout_width="187dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#8BC34A"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="Save"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTconfirmPasswordUpdate" />
+
+    <Button
+        android:id="@+id/btnDeleteUser"
+        android:layout_width="187dp"
+        android:layout_height="61dp"
+        android:backgroundTint="#ED5454"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="delete user"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSaveChanges" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayoutAdminUsersManagement"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B2C8D6"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.ManageUsersActivity"
+    tools:openDrawer="start">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:background="#B2C8D6"
+        app:headerLayout="@layout/header"
+        app:itemIconTint="#FF1B1F22"
+        app:itemShapeFillColor="#00F3EED2"
+        app:itemTextColor="#FF1B1F22"
+        app:itemTextAppearance="@style/baloo_Size_and_FontStyle"
+        app:menu="@menu/main_menu"
+        app:subheaderColor="#00FFC003" >
+    </com.google.android.material.navigation.NavigationView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarAdminUsersManagement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#B2C8D6"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/hamburger_menu2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="360dp"
+            android:layout_height="86dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/bad_script"
+            android:gravity="center|start"
+            android:text="Users Management"
+            android:textColor="#525C62"
+            android:textSize="48sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchViewUsers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/search_view_bg"
+            app:iconifiedByDefault="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14"
+            app:queryHint="Search">
+
+        </androidx.appcompat.widget.SearchView>
+
+        <TextView
+            android:id="@+id/tvUserCounter"
+            android:layout_width="206dp"
+            android:layout_height="34dp"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:gravity="center|start"
+            android:text="users in total"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchViewUsers" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="280dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvUserCounter">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rVusersList"
+                android:layout_width="390dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btnSaveChangesManageUsers"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:backgroundTint="#036A29"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:text="save"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+        <Button
+            android:id="@+id/btnDeleteUserManageUsers"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:backgroundTint="#ED5454"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:text="delete"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSaveChangesManageUsers" />
+
+        <CheckBox
+            android:id="@+id/cBisAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:text="Admin"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/btnSaveChangesManageUsers"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

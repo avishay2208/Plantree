@@ -1,0 +1,637 @@
+@startuml
+class com.example.sqlproject.ManageUsersActivity {
+~ CheckBox cBisAdmin
+~ Button btnSaveChangesManageUsers
+~ Context context
+~ List<User> filteredUsers
+~ RecyclerView recycleView
+~ SearchView searchView
+~ User chosenUser
++ DrawerLayout drawerLayout
++ NavigationView navigationView
++ RecycleAdapterUsers userAdapter
+~ RecycleAdapterUsers.RecycleViewClickListener listener
++ Toolbar toolbar
+# void onCreate(Bundle)
+- void filterUsers(String)
++ boolean onNavigationItemSelected(MenuItem)
++ void initButtons()
+~ void initRecycleView()
+- void itemClick()
++ void updateUser(User)
++ void onClick(View)
+}
+
+
+class com.example.sqlproject.Utils {
++ {static} void importUsers()
++ {static} void importPlants()
++ {static} void importPlantsByUserID(int)
++ {static} void importTrees()
++ {static} void importLocations()
++ {static} String getCurrentDate()
+}
+
+class com.example.sqlproject.PaymentForTreesActivity {
+~ TextView tVcardHolderID
+~ EditText eTcardHolderID
+~ Button btnPay
+~ Activity activity
+# void onCreate(Bundle)
+~ void initEditTexts()
+~ void initTextViews()
+~ void initButtons()
++ void onClick(View)
+}
+
+
+class com.example.sqlproject.Plants {
+- {static} Plants plants
++ {static} Plants getPlants()
++ {static} Plants getPlantsByUserID(int)
++ {static} void setPlants(Plants)
+}
+
+
+class com.example.sqlproject.ManageLocationsActivity {
+~ Context context
+~ Location location
+~ Button btnAddLocation
+~ EditText etLocationAddress
+~ TextInputLayout textInputLayout
+~ AutoCompleteTextView autoCompleteTextView
+~ String locationAddress
+~ boolean validNew
++ DrawerLayout drawerLayout
++ NavigationView navigationView
++ Toolbar toolbar
+# void onCreate(Bundle)
+~ void initButtons()
+~ void initEditTexts()
+~ void initTextInput()
++ boolean onNavigationItemSelected(MenuItem)
++ void onClick(View)
+}
+
+
+class com.example.sqlproject.RestApi {
+~ {static} ServerPostCommunication serverPostCommunication
++ {static} String privateSqlCommand(String)
++ {static} String sqlCommand(String)
++ {static} String twoSqlCommand(String)
++ {static} String showFile(String)
++ {static} void saveFile(String,String)
++ {static} void savePhoto(String,String)
++ {static} String getCodeUpdate()
+}
+
+
+class com.example.sqlproject.ServerPostCommunication {
+- {static} String URL
+- {static} int counter
+- {static} HttpURLConnection con
++ <<Create>> ServerPostCommunication()
+# String doInBackground(String)
+}
+
+
+class com.example.sqlproject.DeleteTreeDialogBoxActivity {
+~ Button btnDialogDeleteTree
+~ Context context
+~ int treeID
++ <<Create>> DeleteTreeDialogBoxActivity(Context,int)
+# void onCreate(Bundle)
+~ void initButtons()
++ void onClick(View)
+}
+
+
+class com.example.sqlproject.Trees {
+- {static} Trees trees
++ {static} Tree chosenTree
++ {static} Trees getTrees()
++ {static} void setTrees(Trees)
++ {static} Tree getTreeByType(String)
++ {static} void setChosenTree(Tree)
++ {static} List<String> getTreeTypesOnly()
+}
+
+
+class com.example.sqlproject.Location {
+- int id
+- String address
+- String mapImageUrl
++ <<Create>> Location(int,String,String)
++ int getID()
++ String getAddress()
++ String getMapImageUrl()
+}
+
+
+class com.example.sqlproject.MainActivity {
+~ Button btnSignIn
+~ String loggedEmail
+~ EditText eTeMail
+# void onCreate(Bundle)
+~ void initButtons()
+~ void initEditTexts()
++ void onClick(View)
+}
+
+
+class com.example.sqlproject.RecycleAdapterUsers {
+- List<User> users
+~ Context context
+- RecycleAdapterUsers.RecycleViewClickListener listener
++ <<Create>> RecycleAdapterUsers(List<User>,RecycleAdapterUsers.RecycleViewClickListener,Context)
++ void updateUsers(List<User>)
++ RecycleAdapterUsers.MyViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(RecycleAdapterUsers.MyViewHolder,int)
++ int getItemCount()
+}
+
+
+class com.example.sqlproject.RecycleAdapterUsers$MyViewHolder {
+- TextView tvUserName
++ <<Create>> MyViewHolder(View)
++ void onClick(View)
+}
+
+
+interface com.example.sqlproject.RecycleAdapterUsers$RecycleViewClickListener {
+~ void onClick(View,int)
+}
+
+class com.example.sqlproject.DeleteLocationDialogBoxActivity {
+~ Button btnDialogDeleteLocation
+~ Context context
+~ int locationID
++ <<Create>> DeleteLocationDialogBoxActivity(Context,int)
+# void onCreate(Bundle)
+~ void initButtons()
++ void onClick(View)
+}
+
+
+class com.example.sqlproject.PlantsHistoryAdminActivity {
+~ RecycleAdapterPlantsAdmin.RecycleViewClickListener listener
++ DrawerLayout drawerLayout
++ NavigationView navigationView
++ Toolbar toolbar
+~ Context context
+# void onCreate(Bundle)
++ boolean onNavigationItemSelected(MenuItem)
++ void onClick(View)
+~ void initRecycleView()
+~ void itemClick()
+}
+
+
+class com.example.sqlproject.BitMapConversions {
++ {static} String getStringFromBitmap(Bitmap)
++ {static} Bitmap getBitmapFromString(String)
++ {static} Bitmap convertResourceImageToBitmap(Context,int)
+}
+
+class com.example.sqlproject.AdminControlsActivity {
+~ Button btnManageTrees
++ DrawerLayout drawerLayout
++ NavigationView navigationView
++ Toolbar toolbar
+# void onCreate(Bundle)
+~ void initButtons()
++ boolean onNavigationItemSelected(MenuItem)
++ void onClick(View)
+}
+
+
+class com.example.sqlproject.AddressArrayAdapter {
++ <<Create>> AddressArrayAdapter(Context,List<Location>)
++ View getView(int,View,ViewGroup)
++ Filter getFilter()
+}
+
+class com.example.sqlproject.Plant {
+- int plantID
+- int userID
+- String userName
+- int treeID
+- String treeName
+- String plantAddress
+- String plantDate
+- double price
++ <<Create>> Plant(int,int,String,int,String,String,String,double)
++ int getPlantID()
++ int getUserID()
++ String getUserName()
++ int getTreeID()
++ String getTreeName()
++ String getPlantAddress()
++ String getPlantDate()
++ double getPrice()
+}
+
+
+class com.example.sqlproject.HomeActivity {
+~ Button btnPlantNewTree
+~ TextView tVwelcomeUser
++ DrawerLayout drawerLayout
++ NavigationView navigationView
++ Toolbar toolbar
+# void onCreate(Bundle)
+~ void initButtons()
+~ void initTextViews()
++ boolean onNavigationItemSelected(MenuItem)
++ void onClick(View)
+}
+
+
+class com.example.sqlproject.SendSms {
++ {static} int MY_PERMISSIONS_REQUEST_SEND_SMS
++ {static} boolean hasSMSPermission(Activity)
++ {static} void askForPermission(Activity)
++ {static} void sendSMS(String,String,Activity)
+}
+
+
+class com.example.sqlproject.RegisterActivity {
+~ EditText eTpasswordReg
+~ Button btnRegReg
+~ String firstName
+~ int isAdmin
+# void onCreate(Bundle)
+~ void initButtons()
+~ void initEditTexts()
++ void onClick(View)
+}
+
+
+class com.example.sqlproject.DeleteUserDialogBoxActivity {
+~ Button btnDialogDeleteUser
+~ Context context
+~ int userID
++ <<Create>> DeleteUserDialogBoxActivity(Context,int)
+# void onCreate(Bundle)
+~ void initButtons()
++ void onClick(View)
+}
+
+
+class com.example.sqlproject.Serialization {
++ {static} String convertObjectToJson(T)
++ {static} T convertRawJsonToObject(Class<T>,int,Context)
++ {static} T convertStringJsonToObject(Class<T>,String)
++ {static} String readJsonFile(int,Context)
+}
+
+class com.example.sqlproject.RecycleAdapterPlantsAdmin {
+- ArrayList<Plant> plants
+- ArrayList<Tree> trees
+~ Context context
+- RecycleAdapterPlantsAdmin.RecycleViewClickListener listener
++ <<Create>> RecycleAdapterPlantsAdmin(ArrayList<Plant>,ArrayList<Tree>,RecycleAdapterPlantsAdmin.RecycleViewClickListener,Context)
++ RecycleAdapterPlantsAdmin.MyViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(RecycleAdapterPlantsAdmin.MyViewHolder,int)
++ int getItemCount()
+}
+
+
+class com.example.sqlproject.RecycleAdapterPlantsAdmin$MyViewHolder {
+- TextView tVplantID
+- TextView tVtreeType
+- TextView tVtreeID
+- TextView tVuserName
+- TextView tVuserID
+- TextView tVplantDate
+- TextView tVplantAddress
+- TextView tVprice
+- ImageView iVtree
++ <<Create>> MyViewHolder(View)
++ void onClick(View)
+}
+
+
+interface com.example.sqlproject.RecycleAdapterPlantsAdmin$RecycleViewClickListener {
+~ void onClick(View,int)
+}
+
+class com.example.sqlproject.InfoUpdateActivity {
+~ EditText eTfirstName
+~ Button btnSaveChanges
+~ Context context
+~ String firstName
+# void onCreate(Bundle)
+~ void initButtons()
+~ void initEditTexts()
++ void onClick(View)
+}
+
+
+class com.example.sqlproject.PurchaseDialogBoxActivity {
+~ Button btnDialogClose
+~ Context context
++ <<Create>> PurchaseDialogBoxActivity(Context)
+# void onCreate(Bundle)
+~ void initButtons()
++ void onClick(View)
+}
+
+
+class com.example.sqlproject.RecycleAdapterTrees {
+- List<Tree> trees
+~ Context context
+- RecycleViewClickListener listener
++ <<Create>> RecycleAdapterTrees(List<Tree>,RecycleViewClickListener,Context)
++ void updateTrees(List<Tree>)
++ MyViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(MyViewHolder,int)
++ int getItemCount()
+}
+
+
+class com.example.sqlproject.RecycleAdapterTrees$MyViewHolder {
+- TextView tVType
+- ImageView iVTree
++ <<Create>> MyViewHolder(View)
++ void onClick(View)
+}
+
+
+interface com.example.sqlproject.RecycleAdapterTrees$RecycleViewClickListener {
+~ void onClick(View,int)
+}
+
+class com.example.sqlproject.Users {
+- {static} Users users
++ {static} User loggedOnUser
++ {static} User chosenUser
++ {static} Users getUsers()
++ {static} User getLoggedOnUserByMail(String)
++ {static} void setLoggedOnUser(User)
++ {static} void userLogout()
++ {static} void setUsers(Users)
++ {static} void setChosenUser(User)
+}
+
+
+class com.example.sqlproject.TreeDataPreviewActivity {
+~ Tree tree
+~ ImageView iV
+~ EditText etType
+~ Button btnPlant
+~ String type
+~ double price
+~ int stock
+~ int grayColor
+~ boolean valid
+~ TextInputLayout textInputLayout
+~ AutoCompleteTextView autoCompleteTextView
++ DrawerLayout drawerLayout
++ NavigationView navigationView
++ Toolbar toolbar
+# void onCreate(Bundle)
+~ void initButtons()
+~ void initTextInput()
+~ void initImageViews()
+~ void initEditTexts()
++ void findTree()
++ boolean onNavigationItemSelected(MenuItem)
++ void onClick(View)
+}
+
+
+class com.example.sqlproject.RecycleAdapterPlantsUser {
+- ArrayList<Plant> plants
+- ArrayList<Tree> trees
+~ Context context
+- RecycleViewClickListener listener
++ <<Create>> RecycleAdapterPlantsUser(ArrayList<Plant>,ArrayList<Tree>,RecycleViewClickListener,Context)
++ RecycleAdapterPlantsUser.MyViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(RecycleAdapterPlantsUser.MyViewHolder,int)
++ int getItemCount()
+}
+
+
+class com.example.sqlproject.RecycleAdapterPlantsUser$MyViewHolder {
+- TextView tVplantID
+- TextView tVtreeType
+- TextView tVtreeID
+- TextView tVplantAdress
+- TextView tVplantDate
+- TextView tVprice
+- ImageView iVtree
++ <<Create>> MyViewHolder(View)
++ void onClick(View)
+}
+
+
+interface com.example.sqlproject.RecycleAdapterPlantsUser$RecycleViewClickListener {
+~ void onClick(View,int)
+}
+
+class com.example.sqlproject.LogoutDialogBoxActivity {
+~ Button btnDialogLogout
+~ Context context
++ <<Create>> LogoutDialogBoxActivity(Context)
+# void onCreate(Bundle)
+~ void initButtons()
++ void onClick(View)
+}
+
+
+class com.example.sqlproject.TreesListActivity {
+~ RecycleAdapterTrees.RecycleViewClickListener listener
++ DrawerLayout drawerLayout
+~ List<Tree> filteredTrees
+~ SearchView searchView
++ NavigationView navigationView
++ Toolbar toolbar
++ RecycleAdapterTrees treeAdapter
+~ Context context
+# void onCreate(Bundle)
+- void filterTrees(String)
++ boolean onNavigationItemSelected(MenuItem)
++ void onClick(View)
+~ void initRecycleView()
+~ void itemClick()
+}
+
+
+class com.example.sqlproject.PlantsHistoryUserActivity {
+~ RecycleAdapterPlantsUser.RecycleViewClickListener listener
++ DrawerLayout drawerLayout
++ NavigationView navigationView
++ Toolbar toolbar
+~ Context context
+# void onCreate(Bundle)
++ boolean onNavigationItemSelected(MenuItem)
++ void onClick(View)
+~ void initRecycleView()
+~ void itemClick()
+}
+
+
+class com.example.sqlproject.Tree {
+- int id
+- String type
+- int stock
+- double price
+- String imageUrl
++ <<Create>> Tree(int,String,int,double,String)
++ int getID()
++ String getType()
++ int getStock()
++ double getPrice()
++ String getImageUrl()
+}
+
+
+class com.example.sqlproject.Locations {
+- {static} Locations locations
++ {static} Location chosenLocation
++ {static} Location getLocationByAddress(String)
++ {static} Locations getLocations()
++ {static} void setLocations(Locations)
++ {static} void setChosenLocation(Location)
++ {static} List<String> getAddressesOnly()
+}
+
+
+class com.example.sqlproject.ImageViewDialogBoxActivity {
+~ Button btnDialogClose
+~ ImageView iv
+~ Context context
++ <<Create>> ImageViewDialogBoxActivity(Context)
+# void onCreate(Bundle)
+~ void initButtons()
+~ void initImageViews()
++ void onClick(View)
+}
+
+
+class com.example.sqlproject.ManageTreesActivity {
+~ Context context
+~ Tree tree
+~ Button btnAddTree
+~ EditText etAddTreeType
+~ TextInputLayout textInputLayout
+~ AutoCompleteTextView autoCompleteTextView
+~ String treeType
+~ int treeStock
+~ double treePrice
+~ boolean valid
++ DrawerLayout drawerLayout
++ NavigationView navigationView
++ Toolbar toolbar
+# void onCreate(Bundle)
+~ void initButtons()
+~ void initEditTexts()
+~ void initTextInput()
++ boolean onNavigationItemSelected(MenuItem)
++ void onClick(View)
+}
+
+
+class com.example.sqlproject.User {
+- int id
+- String firstName
+- String lastName
+- String phoneNumber
+- String eMail
+- String password
+- int plantCounter
+- String joinDate
++ <<Create>> User(int,String,String,String,String,String,int,String,int)
++ <<Create>> User(String,String,String,String,String)
++ int getID()
++ String getFirstName()
++ String getLastName()
++ String getFullName()
++ String getPhoneNumber()
++ String getEmail()
++ String getPassword()
++ int getPlantCounter()
++ void setPlantCounter(int)
++ String getJoinDate()
++ boolean isAdmin()
++ {static} void setAdmin(User)
++ {static} void cancelAdmin(User)
+}
+
+
+
+
+com.example.sqlproject.OnNavigationItemSelectedListener <|.. com.example.sqlproject.ManageUsersActivity
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.ManageUsersActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.sqlproject.ManageUsersActivity
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.PaymentForTreesActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.sqlproject.PaymentForTreesActivity
+java.util.ArrayList <|-- com.example.sqlproject.Plants
+com.example.sqlproject.OnNavigationItemSelectedListener <|.. com.example.sqlproject.ManageLocationsActivity
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.ManageLocationsActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.sqlproject.ManageLocationsActivity
+android.os.AsyncTask <|-- com.example.sqlproject.ServerPostCommunication
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.DeleteTreeDialogBoxActivity
+android.app.Dialog <|-- com.example.sqlproject.DeleteTreeDialogBoxActivity
+java.util.ArrayList <|-- com.example.sqlproject.Trees
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.MainActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.sqlproject.MainActivity
+com.example.sqlproject.Adapter <|-- com.example.sqlproject.RecycleAdapterUsers
+com.example.sqlproject.RecycleAdapterUsers +.. com.example.sqlproject.RecycleAdapterUsers$MyViewHolder
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.RecycleAdapterUsers$MyViewHolder
+com.example.sqlproject.ViewHolder <|-- com.example.sqlproject.RecycleAdapterUsers$MyViewHolder
+com.example.sqlproject.RecycleAdapterUsers +.. com.example.sqlproject.RecycleAdapterUsers$RecycleViewClickListener
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.DeleteLocationDialogBoxActivity
+android.app.Dialog <|-- com.example.sqlproject.DeleteLocationDialogBoxActivity
+com.example.sqlproject.OnNavigationItemSelectedListener <|.. com.example.sqlproject.PlantsHistoryAdminActivity
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.PlantsHistoryAdminActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.sqlproject.PlantsHistoryAdminActivity
+com.example.sqlproject.OnNavigationItemSelectedListener <|.. com.example.sqlproject.AdminControlsActivity
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.AdminControlsActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.sqlproject.AdminControlsActivity
+android.widget.ArrayAdapter <|-- com.example.sqlproject.AddressArrayAdapter
+com.example.sqlproject.OnNavigationItemSelectedListener <|.. com.example.sqlproject.HomeActivity
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.HomeActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.sqlproject.HomeActivity
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.RegisterActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.sqlproject.RegisterActivity
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.DeleteUserDialogBoxActivity
+android.app.Dialog <|-- com.example.sqlproject.DeleteUserDialogBoxActivity
+com.example.sqlproject.Adapter <|-- com.example.sqlproject.RecycleAdapterPlantsAdmin
+com.example.sqlproject.RecycleAdapterPlantsAdmin +.. com.example.sqlproject.RecycleAdapterPlantsAdmin$MyViewHolder
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.RecycleAdapterPlantsAdmin$MyViewHolder
+com.example.sqlproject.ViewHolder <|-- com.example.sqlproject.RecycleAdapterPlantsAdmin$MyViewHolder
+com.example.sqlproject.RecycleAdapterPlantsAdmin +.. com.example.sqlproject.RecycleAdapterPlantsAdmin$RecycleViewClickListener
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.InfoUpdateActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.sqlproject.InfoUpdateActivity
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.PurchaseDialogBoxActivity
+android.app.Dialog <|-- com.example.sqlproject.PurchaseDialogBoxActivity
+com.example.sqlproject.Adapter <|-- com.example.sqlproject.RecycleAdapterTrees
+com.example.sqlproject.RecycleAdapterTrees +.. com.example.sqlproject.RecycleAdapterTrees$MyViewHolder
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.RecycleAdapterTrees$MyViewHolder
+com.example.sqlproject.ViewHolder <|-- com.example.sqlproject.RecycleAdapterTrees$MyViewHolder
+com.example.sqlproject.RecycleAdapterTrees +.. com.example.sqlproject.RecycleAdapterTrees$RecycleViewClickListener
+java.util.ArrayList <|-- com.example.sqlproject.Users
+com.example.sqlproject.OnNavigationItemSelectedListener <|.. com.example.sqlproject.TreeDataPreviewActivity
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.TreeDataPreviewActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.sqlproject.TreeDataPreviewActivity
+com.example.sqlproject.Adapter <|-- com.example.sqlproject.RecycleAdapterPlantsUser
+com.example.sqlproject.RecycleAdapterPlantsUser +.. com.example.sqlproject.RecycleAdapterPlantsUser$MyViewHolder
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.RecycleAdapterPlantsUser$MyViewHolder
+com.example.sqlproject.ViewHolder <|-- com.example.sqlproject.RecycleAdapterPlantsUser$MyViewHolder
+com.example.sqlproject.RecycleAdapterPlantsUser +.. com.example.sqlproject.RecycleAdapterPlantsUser$RecycleViewClickListener
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.LogoutDialogBoxActivity
+android.app.Dialog <|-- com.example.sqlproject.LogoutDialogBoxActivity
+com.example.sqlproject.OnNavigationItemSelectedListener <|.. com.example.sqlproject.TreesListActivity
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.TreesListActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.sqlproject.TreesListActivity
+com.example.sqlproject.OnNavigationItemSelectedListener <|.. com.example.sqlproject.PlantsHistoryUserActivity
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.PlantsHistoryUserActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.sqlproject.PlantsHistoryUserActivity
+java.util.ArrayList <|-- com.example.sqlproject.Locations
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.ImageViewDialogBoxActivity
+android.app.Dialog <|-- com.example.sqlproject.ImageViewDialogBoxActivity
+com.example.sqlproject.OnNavigationItemSelectedListener <|.. com.example.sqlproject.ManageTreesActivity
+com.example.sqlproject.OnClickListener <|.. com.example.sqlproject.ManageTreesActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.sqlproject.ManageTreesActivity
+@enduml

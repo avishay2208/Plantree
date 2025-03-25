@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B2C8D6">
+
+    <TextView
+        android:id="@+id/tVcheckOut"
+        android:layout_width="339dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="55dp"
+        android:fontFamily="@font/bad_script"
+        android:gravity="center|start"
+        android:text="Checkout"
+        android:textSize="52dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tVcardID"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:paddingStart="5dp"
+        android:text="Card's holder ID:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVcheckOut" />
+
+    <EditText
+        android:id="@+id/eTcardID"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:inputType="number"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVcardID" />
+
+    <TextView
+        android:id="@+id/tVcardNumber"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:paddingStart="5dp"
+        android:text="Card number:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTcardID" />
+
+    <EditText
+        android:id="@+id/eTcardNumber"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:inputType="number"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVcardNumber" />
+
+    <TextView
+        android:id="@+id/tVtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="Total price:"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <Button
+        android:id="@+id/btnPay"
+        android:layout_width="150dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#8BC34A"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="Pay"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVtotal" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTcardNumber">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="155dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tVcardDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2_semibold"
+                android:paddingStart="5dp"
+                android:text="Date:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/eTcardDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:fontFamily="@font/baloo_bhai_2_semibold"
+                android:inputType="date"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tVcardDate" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="155dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tVcardCVV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2_semibold"
+                android:paddingStart="5dp"
+                android:text="CVV:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/eTcardCVV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:fontFamily="@font/baloo_bhai_2_semibold"
+                android:inputType="number"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tVcardCVV" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

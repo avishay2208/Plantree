@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayoutAdminPlant"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B2C8D6"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.HomeActivity"
+    tools:openDrawer="start">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:background="#B2C8D6"
+        app:headerLayout="@layout/header"
+        app:itemIconTint="#FF1B1F22"
+        app:itemShapeFillColor="#00F3EED2"
+        app:itemTextAppearance="@style/baloo_Size_and_FontStyle"
+        app:itemTextColor="#FF1B1F22"
+        app:menu="@menu/main_menu"
+        app:subheaderColor="#00FFC003"></com.google.android.material.navigation.NavigationView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarAdminPlant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#B2C8D6"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/hamburger_menu2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvWelcomeUser"
+            android:layout_width="383dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="90dp"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:gravity="center|start"
+            android:text="Hello user"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvMemberSince"
+            android:layout_width="384dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:gravity="center|start"
+            android:text="member since"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvWelcomeUser" />
+
+        <TextView
+            android:id="@+id/tvNumOfTreesPlanted"
+            android:layout_width="384dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:gravity="center|start"
+            android:text="trees planted"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvMemberSince" />
+
+        <TextView
+            android:id="@+id/tvAdminNumOfAllPlants"
+            android:layout_width="384dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:gravity="center|start"
+            android:text="all trees planted"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNumOfTreesPlanted" />
+
+        <Button
+            android:id="@+id/btnPlantNewTree"
+            android:layout_width="205dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="100dp"
+            android:backgroundTint="#8BC34A"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:text="plant a tree!"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAdminNumOfAllPlants" />
+
+        <Button
+            android:id="@+id/btnAdminControls"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#75FF6600"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:text="Admin Controls"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnPlantNewTree" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
